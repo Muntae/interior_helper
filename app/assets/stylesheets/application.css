@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'computerB';
+  src: url(/fonts/210computerB.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'computerL';
+  src: url(/fonts/210computerL.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'gomusin';
+  src: url(/fonts/HoonGomusinR.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'makdae';
+  src: url(/fonts/HoonMakdaeyunpilR.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'bam';
+  src: url(/fonts/210OhneulbamR.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'josun';
+  src: url(/fonts/josun.ttf) format('truetype');
+}
+
+.room-title {
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+.room-desc {
+  font-size: 1em;
+}
+a {
+  text-decoration: none;
+}
+
+li a {
+  text-decoration: none;
+}
+#add_btn {
+  font-size: 40px;
+  padding-left: 7px;
+  padding-right: 3px;
+  padding-bottom: 5px;
+  padding-top: 3px;
+  border-radius: 50%;
+  border: 1px solid green;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.room {
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+#tool {
+  margin-right: 10px;
+}
+
+.desc {
+  width: 100%;
+  height: 10em;
+}
+
+.furnitures {
+  position: absolute;
+  /*float: ;*/
+  border-style: solid;
+  border-width: 3px;
+  margin: 1px 1px;
+  cursor: move;
+  text-align: center;
+  top: 300px;
+  left: 300px;
+  font-family: computerB;
+  font-size: 1em;
+}
+
+.wall {
+  position: fixed;
+  border-width: 3px;
+  cursor: move;
+  text-align: center;
+  top: 100px;
+  left: 100px;
+  background-color: black;
+}
+
+.cursor {
+  cursor: move;
+}
+
+label {
+  font-family: computerL;
+}
+
+button {
+  font-family: computerL;
+}
+
+form input {
+  font-family: computerL;
+}
+
+p {
+  font-family: computerL;
+}
+
+.LOG_IN h2 {
+  font-family: computerL;
+}
+
+.SIGN_UP h2 {
+  font-family: computerL;
+}
+#makeBtn:hover {
+  background-color: #07c407;
+}
+
+.remove_btn {
+  position: absolute;
+  line-height: 2em; 
+  display: flex;
+  margin-left: 0.5em;
+  text-decoration: none;
+}

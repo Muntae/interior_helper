@@ -1,0 +1,50 @@
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <a href="/users/sign_up"><input type="button" class="action-sign-up" value="회원가입"></a><br>
+<% end -%>
+
+<%#- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%#= link_to "비밀번호 찾기", new_password_path(resource_name) %><br />
+<%# end -%>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+  <% end -%>
+<% end -%>
+
+<style>
+  .action-sign-up {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    background-color: green;
+    color: #FFF;
+    margin-top: 10px;
+    line-height: 50px;
+    border: none;
+    font-family: computerL;
+  }
+  .action-sign-up:hover {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    background-color: #07c407;
+    color: #FFF;
+    margin-top: 10px;
+    line-height: 50px;
+    border: none;
+    font-family: computerL;
+  }
+</style>

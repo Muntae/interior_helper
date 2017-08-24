@@ -1,0 +1,83 @@
+<div class="SIGN_UP">
+  <h2>회원가입</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div class="field">
+      <%#= f.label :email %><br />
+      <%= f.email_field :email, class: 'form-field', placeholder: '이메일주소', autofocus: true %>
+    </div>
+  
+    <div class="field">
+      <%#= f.label :password %>
+      <% if @minimum_password_length %>
+      <em style="font-family: computerL;">(최소 4자 이상)</em>
+      <% end %><br />
+      <%= f.password_field :password, class: 'form-field', placeholder: '비밀번호',autocomplete: "off" %>
+    </div>
+  
+    <div class="field">
+      <%#= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, class: 'form-field', placeholder: '비밀번호 확인',autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "회원가입", class: 'action-sign-up' %>
+    </div>
+  <% end %>
+  
+  <%#= render "devise/shared/links" %>
+</div>
+
+<style>
+body {
+  background-color: #F5FAF6;
+}
+.SIGN_UP {
+  text-align: center;
+  height: 30em;
+  width: 33em;
+  position: static;
+  display: block;
+  border: 3px groove green;
+  background-color: #FFF;
+  padding: 10px;
+  margin: 100px auto;
+
+}
+h2 {
+  margin-bottom: 5px;
+  font-size: 60px;
+  color: black;
+}
+.field {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.form-field {
+  width: 250px;
+  height: 50px;
+  padding: 10px;
+}
+.action-sign-up {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  background-color: green;
+  color: #FFF;
+  margin-top: 10px;
+  line-height: 50px;
+  border: none;
+}
+.action-sign-up:hover {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  background-color: #07c407;
+  color: #FFF;
+  margin-top: 10px;
+  line-height: 50px;
+  border: none;
+}
+</style>

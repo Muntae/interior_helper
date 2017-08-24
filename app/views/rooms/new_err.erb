@@ -1,0 +1,54 @@
+<form action="/create_room" method="post">
+<div class="input_ROOM">
+  <h1>방을 만드세요!</h1>
+  <div class="input-group">
+    <span class="input-group-addon" id="input_room_name">제목</span>
+    <input type="text" class="form-control" name="title" placeholder="Title" aria-describedby="basic-addon2">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="input_room_width">가로</span>
+    <input type="number" class="form-control"  name="width" placeholder="cm" aria-describedby="basic-addon1" min="100" max="800">
+    <span class="input-group-addon">cm</span>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="input_room_height">세로</span>
+    <input type="number" class="form-control" name="height" placeholder="cm" aria-describedby="basic-addon1" min="100" max="600">
+    <input type="hidden" name="user_id" value="<%= current_user.id %>">
+    <span class="input-group-addon">cm</span>
+  </div>
+  <button type="submit" class="btn btn-success">방만들기!</button>
+  <p style="margin-top: 2em; color: red;">가로 혹은 세로 길이를 다시 입력해 주세요.</p>
+</div>
+</form>
+
+<style>
+body {
+  background-image: url("/assets/background1.jpg");
+  background-size: 1600px 850px;
+}
+h1 {
+  margin-bottom: 20px;
+  color: black;
+  font-family: computerL;
+}
+.input-group {
+  margin: 30px auto 10px;
+  width: 300px;
+  padding: 5px;
+ 
+}
+.input_ROOM {
+  text-align: center;
+  height: 33em;
+  width: 33em;
+  position: static;
+  display: block;
+  border: 3px groove green;
+  background-color: #FFF;
+  padding: 20px;
+  margin: 100px auto;
+}
+.input-group-addon {
+  font-family: computerL;
+}
+</style>

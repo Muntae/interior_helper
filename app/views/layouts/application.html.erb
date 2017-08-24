@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/union/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/union/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="/union/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<!--<link rel="stylesheet" href="/union/css/bootstrap.css">-->
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="/union/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/union/css/owl.theme.default.min.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="/union/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="/union/js/modernizr-2.6.2.min.js"></script>
+  
+  
+<style>
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #208F15;
+    height: 30px;
+}
+
+.navBar li {
+    float: right;
+}
+
+.navBar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+}
+
+.navBar li a:hover {
+    background-color: #29C51B;
+    text-decoration: none;
+    color: white;
+}
+.navBar li a:focus {
+    text-decoration: none;
+    color: white;
+}
+</style>
+</head>
+<body>
+<ul class="navBar">
+  <% if user_signed_in? %>
+    <li><a href="/users/sign_out">로그아웃</a></li>
+    <li><a href="/mypage/<%= current_user.id %>"><%= current_user.email %></a></li>
+  <% else %>
+    <li><a href="/users/sign_up">회원가입</a></li>
+    <li><a href="/users/sign_in">로그인</a></li>
+  <% end %>
+  <li><a href="/new">방만들기</a></li>
+  <li><a href="/">홈</a></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
